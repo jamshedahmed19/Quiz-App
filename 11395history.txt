@@ -1,0 +1,5 @@
+Maths,100.0%
+English,20.0%
+IQ,100.0%
+English,40.0%
+General Knowledge,100.0%
