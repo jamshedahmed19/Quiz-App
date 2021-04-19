@@ -1,5 +1,0 @@
-General Knowledge,Capital of Pakistan?,Islamabad,Karachi,Lahore,Quetta,Islamabad,
-General Knowledge,What is the smallest country in the world?,Maldives,Vatican City,Macau,Cyprus,Vatican City,
-General Knowledge,What is the hottest continent on Earth?,Asia,Africa,Austrailia,South America,Africa,
-General Knowledge,What is the largest country in the world?,Canada,USA,Russia,China,Russia,
-General Knowledge,What is the longest river in the world?,Amazon,Nile,Indus,Ganges,Nile,

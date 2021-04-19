@@ -1,8 +1,4 @@
-Maths,11395,jamshed,100.0
-English,11395,jamshed,20.0
-Maths,11224,hammad,100.0
-English,11224,hammad,80.0
-IQ,11395,jamshed,100.0
-English,11395,jamshed,40.0
-General Knowledge,11395,jamshed,100.0
-General Knowledge,11409,asfand,100.0
+maths mania,11224,hammad,80,
+maths mania,11395,jamshed,100,
+maths mania,11226,uzair,0,
+GK,11224,hammad,100,

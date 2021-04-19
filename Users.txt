@@ -1,5 +1,4 @@
-11395,jamshed,j.ahmed@gmail.com,0,0
-11224,hammad,hammadw68@gmail.com,0,0
-
-11395,jamshed,jamsheda4ahmed786@gmail.com,0,0
-11409,asfand,asfandtariq99@gmail.com,0,0
+11224,hammad,hammad@gmail.com,0,0
+11395,jamshed,j.@gmail.com,0,0
+11226,uzair,uzsdsd,0,0
+11223,c:/users/user/appdata/local/programs/python/python38/python.exe,def showLeaderboard(self):,0,0

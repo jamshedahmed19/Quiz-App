@@ -1,1 +1,1 @@
-Maths,English,IQ,General Knowledge,
+maths mania,GK,
