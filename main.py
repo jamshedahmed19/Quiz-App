@@ -13,7 +13,7 @@ Created on Mon Mar 22 09:41:24 2021
 # 5. LINKED LIST
 # 6. ARRAY
 # 7. SELECTION SORT
-#
+# 8. DICTIONARY
 
 import os
 import linkedList
@@ -30,7 +30,9 @@ class Admin:
             print('\t\t\t***********************************************')
             print("\t\t\t           " + self.name.capitalize() + "! Welcome To Quiz App ")
             print('\t\t\t***********************************************')
-            print("\t1. Generate Quiz   \n\t2. Delete Quiz \n\t3. Log Out")
+            menu = {"1": "Generate Quiz", "2": "Delete Quiz", "3": "Log Out"}
+            for key, value in menu.items():
+                print("\t\t\t {}. {}".format(key, value))
             select = input("\tEnter Your Selection (1-4): ")
             if select == '1':
                 self.generateQuiz()
@@ -114,8 +116,9 @@ class User:
             print("\t\t          " + self.name.capitalize() +
                   "! Welcome To Quiz App ")
             print('\t\t***********************************************')
-            print(
-                "\t1. Start Quiz   \n\t2. Your Quizzes History \n\t3. LeaderBoard \n\t4. Log Out\n")
+            menu = {"1": "Start Quiz", "2": "Your Quizzes History", "3": "LeaderBoard", "4": "Log Out"}
+            for key, value in menu.items():
+                print("\t\t {}. {}".format(key, value))
             select = input("\tEnter Your Selection (1-4): ")
             if select == '1':
                 self.selectQuiz()
@@ -284,6 +287,7 @@ class User:
         f.write(str(quizname) + "," + str(score) + ",\n")
 
     def selectQuiz(self):
+        i = 0
         for line in open("quizzes.txt", "r").readlines():
             data = line.split(',')
 
@@ -291,37 +295,41 @@ class User:
                 print("\t" + str(i+1) + ". " + str(data[i]))
 
         select = int(input("\tEnter Your Option:"))
-        if(self.isAlreadyAttempted(data[select-1]) == True):
-            print("\tYou have Already Attempted This Quiz Please Try another")
-            str(input("\tPress Any Key "))
-            self.userHome()
-        else:
-            str(input("\tDo You Really want to Start ? "))
-            quizname = data[select-1]
-            filename = data[select-1] + ".txt"
-            questionnumber = 0
-            marks = 0
-            if(os.path.exists(filename)):
-                for line in open(filename, "r").readlines():
-                    data = line.split(',')
-                    questionnumber += 1
-                    print("\tQuestion Number " + str(questionnumber))
-                    print("\t" + data[1])
-                    print("\t\t1.  " + data[2])
-                    print("\t\t2.  " + data[3])
-                    print("\t\t3.  " + data[4])
-                    print("\t\t4.  " + data[5])
-
-                    answer = int(input("\tEnter Your Option Number: "))
-                    answer += 1
-                    if(data[answer] == data[6]):
-                        marks += 1
+        if(select < i+1):
+            if(self.isAlreadyAttempted(data[select-1]) == True):
+                print("\tYou have Already Attempted This Quiz Please Try another")
+                str(input("\tPress Any Key "))
+                self.userHome()
             else:
-                print("Quiz doesn't Exist")
-            result = int((marks/questionnumber) * 100)
-            self.LeaderBoard(quizname, result)
-            self.saveQuizHistory(quizname, result)
-            print("\t Your Result is: " + str(result))
+                str(input("\tDo You Really want to Start ? "))
+                quizname = data[select-1]
+                filename = data[select-1] + ".txt"
+                questionnumber = 0
+                marks = 0
+                if(os.path.exists(filename)):
+                    for line in open(filename, "r").readlines():
+                        data = line.split(',')
+                        questionnumber += 1
+                        print("\tQuestion Number " + str(questionnumber))
+                        print("\t" + data[1])
+                        print("\t\t1.  " + data[2])
+                        print("\t\t2.  " + data[3])
+                        print("\t\t3.  " + data[4])
+                        print("\t\t4.  " + data[5])
+    
+                        answer = int(input("\tEnter Your Option Number: "))
+                        answer += 1
+                        if(data[answer] == data[6]):
+                            marks += 1
+                else:
+                    print("Quiz doesn't Exist")
+                result = int((marks/questionnumber) * 100)
+                self.LeaderBoard(quizname, result)
+                self.saveQuizHistory(quizname, result)
+                print("\t Your Result is: " + str(result))
+        else:
+            print("Select correct option")
+            
 
 
 def start():
@@ -330,10 +338,9 @@ def start():
         print('\t\t\t*****************************')
         print("\t\t\t           Main Menu")
         print('\t\t\t*****************************')
-        # menu = {1: "Login", 2: "Register", 3: "LeaderBoard"}
-        
-        print("\t1. Login  \n\t2. Register\n\t3. LeaderBoard")
-        print("\t3. Exit")
+        menu = {"1": "Login", "2": "Register", "3": "LeaderBoard"}
+        for key, value in menu.items():
+            print("\t\t\t {}. {}".format(key, value))
         if(stack.isEmpty() == True):
             print("\n\t4. Back")
         print()
